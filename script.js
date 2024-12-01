@@ -33,23 +33,33 @@ let lisNotesObj = {
     }
         form.reset()
 
-        function crearHTML() {
-            limpiarHTML();
+       function crearHTML(){
+        limpiarHTML();
+
         listnotes.forEach(list => {
-            const li = document.createElement("li");
-            li.textContent = list.textArea;
-            containerList.appendChild(li)
+            const li = document.createElement("li"),
+                borrarLista = document.createElement("a");
+            borrarLista.classList.add("borrar-lista");
+            borrarLista.textContent = "X";
+
+            borrarLista.onclick = () => {
+                borrarElemento(list.id)
+            }
             
+            li.textContent = list.textArea;
+            
+            containerList.appendChild(li)
+            li.appendChild(borrarLista)
+
         });
 
+
         sincronizarNotas()
-        }
+       }
 
-        function sincronizarNotas() {
-            localStorage.setItem("list", JSON.stringify(listnotes))
-        }
-            
-
+       function sincronizarNotas(){
+        localStorage.setItem("list",JSON.stringify(listnotes))
+       }
 
         function mostrarError(error) {
             const mensajeError = document.createElement("a");
@@ -63,12 +73,21 @@ let lisNotesObj = {
             }, 3000);
         }
 
+            function borrarElemento(id) {
+                listnotes = listnotes.filter(list => list.id !== id);
+                crearHTML();
+                
+            }
+
+        
+
         function limpiarHTML() {
             while (containerList.firstChild) {
                 containerList.removeChild(containerList.firstChild);
             }
         }
 
+    
 
 
 

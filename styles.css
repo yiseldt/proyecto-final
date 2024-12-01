@@ -1,14 +1,26 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing: content-box;
+     box-sizing: border-box;
     font-family: 'poppins',sans-serif;
 }
 
 h1{
+    border: 2px solid rgb(0, 1, 2);
+    padding: 40px;
+    margin: 10px auto;
     text-align: center;
     margin-bottom: 15%;
-    font-weight: 500;
+    font-weight: 900;
+    font-family: cursive;
+    font-size: 35px;   
+    background-color: fuchsia;
+    
+}
+p{
+    font-family: cursive;
+    font-size: larger;
+
 }
 
 
@@ -29,24 +41,26 @@ body{
 .add-notes textarea{
         width: 100%;
         height: 50px;
-        border: solid thin pink;
+        border: solid thin rgb(25, 180, 38);
         padding: 5px;
 }
 
 .add-notes button{
     width: 100%;
     padding: 10px 0;
-    border: none;
+    border: 2px solid #000;
     letter-spacing: 1px;
     background-color: aquamarine;
     cursor: pointer;
     font-size: 12px;
-    color: blueviolet;
+    color: rgb(8, 1, 15);
     border-radius: 5px;
+    font-family: cursive;
+    
 }
 
 .add-notes button:hover{
-    background-color: violet;
+    background-color: rgb(136, 205, 234);
 }
 
 .add-notes textarea:focus{
@@ -56,9 +70,16 @@ body{
 
 .mis-notes h2{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
-    font-weight: 500;
+    font-weight: 1000;
+    font-family: cursive;
+    background-color: rgb(185, 152, 216);
+
+}
+
+.list-notes li{
+    position:relative
 }
 
 .error {
@@ -72,3 +93,20 @@ body{
     text-align: center;
 
 }
+
+.borrar-lista {
+    position:absolute;
+    right: 0;
+    background-color: red;
+    border-radius: 50%;
+    padding: 0 5px;
+    color: #fff;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+body{
+    background-color: rgb(193, 88, 123);
+}
+
+    
